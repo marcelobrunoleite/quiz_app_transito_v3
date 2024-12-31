@@ -1,0 +1,94 @@
+{
+    "placas": [
+        {
+            "tipo": "regulamentacao",
+            "nome": "Pare",
+            "descricao": "Determina parada obrigatória do veículo antes de prosseguir.",
+            "imagem": "https://www.gov.br/prf/pt-br/acesso-a-informacao/placas/regulamentacao/r-1.jpg"
+        },
+        {
+            "tipo": "regulamentacao",
+            "nome": "Dê a Preferência",
+            "descricao": "Indica que deve ceder a passagem aos veículos que trafegam na via em que vai entrar ou cruzar.",
+            "imagem": "https://www.gov.br/prf/pt-br/acesso-a-informacao/placas/regulamentacao/r-2.jpg"
+        },
+        {
+            "tipo": "regulamentacao",
+            "nome": "Velocidade Máxima 80km/h",
+            "descricao": "Regulamenta o limite máximo de velocidade permitido no trecho.",
+            "imagem": "https://www.gov.br/prf/pt-br/acesso-a-informacao/placas/regulamentacao/r-19.jpg"
+        },
+        {
+            "tipo": "advertencia",
+            "nome": "Curva Acentuada à Esquerda",
+            "descricao": "Adverte sobre a existência de curva acentuada à esquerda.",
+            "imagem": "https://www.gov.br/prf/pt-br/acesso-a-informacao/placas/advertencia/a-1a.jpg"
+        },
+        {
+            "tipo": "advertencia",
+            "nome": "Curva Acentuada à Direita",
+            "descricao": "Adverte sobre a existência de curva acentuada à direita.",
+            "imagem": "https://www.gov.br/prf/pt-br/acesso-a-informacao/placas/advertencia/a-1b.jpg"
+        },
+        {
+            "tipo": "advertencia",
+            "nome": "Pista Sinuosa à Esquerda",
+            "descricao": "Adverte sobre a existência de trecho com série de curvas próximas.",
+            "imagem": "https://www.gov.br/prf/pt-br/acesso-a-informacao/placas/advertencia/a-3a.jpg"
+        },
+        {
+            "tipo": "indicacao",
+            "nome": "Pronto Socorro",
+            "descricao": "Indica a existência de serviço de pronto socorro próximo.",
+            "imagem": "https://www.gov.br/prf/pt-br/acesso-a-informacao/placas/indicacao/sai-1.jpg"
+        },
+        {
+            "tipo": "indicacao",
+            "nome": "Aeroporto",
+            "descricao": "Indica a existência de aeroporto próximo.",
+            "imagem": "https://www.gov.br/prf/pt-br/acesso-a-informacao/placas/indicacao/sai-2.jpg"
+        },
+        {
+            "tipo": "indicacao",
+            "nome": "Restaurante",
+            "descricao": "Indica a existência de restaurante próximo.",
+            "imagem": "https://www.gov.br/prf/pt-br/acesso-a-informacao/placas/indicacao/sai-3.jpg"
+        },
+        {
+            "tipo": "regulamentacao",
+            "nome": "Proibido Estacionar",
+            "descricao": "Proíbe o estacionamento de veículos.",
+            "imagem": "assets/images/placas/regulamentacao/r6a.png"
+        },
+        {
+            "tipo": "regulamentacao",
+            "nome": "Proibido Ultrapassar",
+            "descricao": "Proíbe a ultrapassagem de veículos.",
+            "imagem": "assets/images/placas/regulamentacao/r7.png"
+        },
+        {
+            "tipo": "advertencia",
+            "nome": "Cruzamento de Vias",
+            "descricao": "Adverte sobre a existência de cruzamento de vias à frente.",
+            "imagem": "assets/images/placas/advertencia/a2.png"
+        },
+        {
+            "tipo": "advertencia",
+            "nome": "Passagem de Pedestres",
+            "descricao": "Adverte sobre a existência de local de travessia de pedestres.",
+            "imagem": "assets/images/placas/advertencia/a32b.png"
+        },
+        {
+            "tipo": "indicacao",
+            "nome": "Hospital",
+            "descricao": "Indica a existência de hospital próximo.",
+            "imagem": "assets/images/placas/indicacao/i4.png"
+        },
+        {
+            "tipo": "indicacao",
+            "nome": "Posto de Gasolina",
+            "descricao": "Indica a existência de posto de abastecimento próximo.",
+            "imagem": "assets/images/placas/indicacao/i5.png"
+        }
+    ]
+} 

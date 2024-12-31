@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ranking - Quiz de Trânsito</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="ranking.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Header (mesmo do index.html) -->
+    
+    <header class="site-header">
+        <div class="main-header">
+            <div class="container">
+                <div class="header-content">
+                    <div class="logo">
+                        <img src="assets/images/logo.png" alt="Logo Quiz Trânsito">
+                        <h1 class="site-title">Quiz de Trânsito</h1>
+                    </div>
+                    <div class="menu-hamburguer">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                    <nav class="menu-principal">
+                        <a href="index.html" class="nav-link">Home</a>
+                        <a href="quiz.html" class="nav-link">Quiz</a>
+                        <a href="ranking.html" class="nav-link">Ranking</a>
+                        <a href="placas.html" class="nav-link">Placas</a>
+                        <a href="flashcards.html" class="nav-link">Flashcards</a>
+                        <a href="sobre.html" class="nav-link">Sobre Nós</a>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </header>
+    
+    <main class="site-main">
+        <div class="container">
+            <h1 class="ranking-title">Ranking dos Melhores</h1>
+            
+            <!-- Pódio -->
+            <div class="podium-container">
+                <div class="podium-places">
+                    <div class="podium-place second">
+                        <div class="avatar">👤</div>
+                        <div class="medal">🥈</div>
+                        <span class="name">Vazio</span>
+                        <span class="score">0.0%</span>
+                    </div>
+                    <div class="podium-place first">
+                        <div class="crown">👑</div>
+                        <div class="medal">🥇</div>
+                        <span class="name">Vazio</span>
+                        <span class="score">0.0%</span>
+                    </div>
+                    <div class="podium-place third">
+                        <div class="avatar">👤</div>
+                        <div class="medal">🥉</div>
+                        <span class="name">Vazio</span>
+                        <span class="score">0.0%</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Estatísticas -->
+            <div class="stats-container">
+                <h2>Estatísticas Gerais</h2>
+                <div class="stats-grid">
+                    <div class="stat-item">
+                        <span class="stat-label">Total de Simulados</span>
+                        <span class="stat-value">0</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-label">Média Geral</span>
+                        <span class="stat-value">0%</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-label">Taxa de Aprovação</span>
+                        <span class="stat-value">0%</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Gráfico de Desempenho -->
+            <div class="performance-container">
+                <h2>Seu Desempenho</h2>
+                <div class="chart-container">
+                    <canvas id="performanceChart"></canvas>
+                </div>
+            </div>
+
+            <!-- Top 10 Jogadores -->
+            <div class="top-players-container">
+                <h2>Top 10 Jogadores</h2>
+                <div class="ranking-table">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Posição</th>
+                                <th>Jogador</th>
+                                <th>Pontuação</th>
+                                <th>Simulados</th>
+                                <th>Média</th>
+                            </tr>
+                        </thead>
+                        <tbody id="ranking-list">
+                            <!-- Preenchido via JavaScript -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="ranking.js"></script>
+</body>
+</html> 

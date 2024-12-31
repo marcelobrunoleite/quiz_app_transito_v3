@@ -1,0 +1,513 @@
+/* Estilos gerais */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+.ranking-title {
+    color: #8A2BE2;
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+}
+
+/* Estilos do Pódio */
+.podium-container {
+    background: rgba(10, 10, 31, 0.5);
+    border: 1px solid #00F7FF;
+    border-radius: 10px;
+    padding: 2rem;
+    margin-bottom: 2rem;
+    position: relative;
+    min-height: 400px; /* Altura mínima para acomodar o pódio */
+}
+
+.podium-places {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    gap: 2rem;
+    padding: 1rem;
+    height: 100%;
+}
+
+.podium-place {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 1rem;
+    transition: all 0.3s ease;
+    position: relative;
+    background: rgba(10, 10, 31, 0.8);
+    border-radius: 10px;
+}
+
+/* Primeiro Lugar */
+.podium-place.first {
+    order: 2;
+    transform: scale(1.2);
+    padding: 2rem;
+    height: 300px;
+    border: 2px solid #FFD700; /* Dourado */
+    box-shadow: 0 0 20px rgba(255, 215, 0, 0.3);
+    z-index: 3;
+}
+
+.podium-place.first .crown {
+    font-size: 3rem;
+    color: #FFD700;
+    animation: floating 2s ease-in-out infinite;
+}
+
+.podium-place.first .medal {
+    color: #FFD700;
+}
+
+.podium-place.first .name {
+    color: #FFD700;
+    font-size: 1.5rem;
+}
+
+.podium-place.first .score {
+    font-size: 1.3rem;
+    color: #FFD700;
+}
+
+/* Segundo Lugar */
+.podium-place.second {
+    order: 1;
+    height: 250px;
+    border: 2px solid #C0C0C0; /* Prata */
+    box-shadow: 0 0 15px rgba(192, 192, 192, 0.3);
+    z-index: 2;
+}
+
+.podium-place.second .medal {
+    color: #C0C0C0;
+}
+
+.podium-place.second .name {
+    color: #C0C0C0;
+}
+
+/* Terceiro Lugar */
+.podium-place.third {
+    order: 3;
+    height: 200px;
+    border: 2px solid #CD7F32; /* Bronze */
+    box-shadow: 0 0 15px rgba(205, 127, 50, 0.3);
+    z-index: 1;
+}
+
+.podium-place.third .medal {
+    color: #CD7F32;
+}
+
+.podium-place.third .name {
+    color: #CD7F32;
+}
+
+/* Animações */
+@keyframes floating {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+    100% { transform: translateY(0px); }
+}
+
+/* Efeito hover nos lugares */
+.podium-place:hover {
+    transform: translateY(-10px);
+}
+
+.podium-place.first:hover {
+    transform: scale(1.25);
+}
+
+/* Avatar styles */
+.avatar {
+    width: 80px;
+    height: 80px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1rem;
+}
+
+.first .avatar {
+    width: 100px;
+    height: 100px;
+    border: 2px solid #FFD700;
+}
+
+.second .avatar {
+    border: 2px solid #C0C0C0;
+}
+
+.third .avatar {
+    border: 2px solid #CD7F32;
+}
+
+/* Medalhas */
+.medal {
+    font-size: 2.5rem;
+    margin: 0.5rem 0;
+    filter: drop-shadow(0 0 5px currentColor);
+}
+
+/* Scores */
+.score {
+    font-weight: bold;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    background: rgba(255, 255, 255, 0.1);
+    margin-top: 0.5rem;
+}
+
+/* Estilos das Estatísticas */
+.stats-container {
+    background: rgba(10, 10, 31, 0.5);
+    border: 1px solid #7700ff;
+    border-radius: 10px;
+    padding: 2rem;
+    margin-bottom: 2rem;
+}
+
+.stats-container h2 {
+    color: #00F7FF;
+    text-align: center;
+    margin-bottom: 1.5rem;
+}
+
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+}
+
+.stat-item {
+    text-align: center;
+}
+
+.stat-label {
+    color: #00F7FF;
+    display: block;
+    margin-bottom: 0.5rem;
+}
+
+.stat-value {
+    color: #ffffff;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+/* Estilos do Gráfico */
+.performance-container {
+    background: rgba(10, 10, 31, 0.5);
+    border: 1px solid #7700ff;
+    border-radius: 10px;
+    padding: 2rem;
+    margin-bottom: 2rem;
+}
+
+.performance-container h2 {
+    color: #00F7FF;
+    text-align: center;
+    margin-bottom: 1.5rem;
+}
+
+.chart-container {
+    height: 300px;
+}
+
+/* Estilos da Tabela de Ranking */
+.top-players-container {
+    background: rgba(10, 10, 31, 0.5);
+    border: 1px solid #00F7FF;
+    border-radius: 10px;
+    padding: 2rem;
+}
+
+.top-players-container h2 {
+    color: #00F7FF;
+    text-align: center;
+    margin-bottom: 1.5rem;
+}
+
+.ranking-table table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.ranking-table th,
+.ranking-table td {
+    padding: 1rem;
+    text-align: center;
+    color: #ffffff;
+}
+
+.ranking-table th {
+    color: #00F7FF;
+    border-bottom: 1px solid #00F7FF;
+}
+
+.ranking-table tr:hover {
+    background: rgba(0, 247, 255, 0.1);
+}
+
+/* Responsividade */
+@media screen and (max-width: 1024px) {
+    .container {
+        padding: 1rem;
+    }
+
+    .ranking-title {
+        font-size: 2rem;
+    }
+
+    .stats-grid {
+        gap: 1rem;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .podium-places {
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+        padding-top: 2rem;
+    }
+
+    .podium-place {
+        width: 80%;
+        height: auto !important;
+        padding: 1rem;
+    }
+
+    .podium-place.first {
+        order: 1;
+        transform: scale(1.1);
+    }
+
+    .podium-place.second {
+        order: 2;
+    }
+
+    .podium-place.third {
+        order: 3;
+    }
+
+    .stats-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+
+    .chart-container {
+        height: 250px;
+    }
+
+    .ranking-table {
+        overflow-x: auto;
+    }
+
+    .ranking-table table {
+        min-width: 600px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .ranking-title {
+        font-size: 1.5rem;
+    }
+
+    .podium-place {
+        width: 90%;
+    }
+
+    .podium-place.first .crown {
+        font-size: 2rem;
+    }
+
+    .podium-place.first .name {
+        font-size: 1.2rem;
+    }
+
+    .avatar {
+        width: 60px;
+        height: 60px;
+    }
+
+    .first .avatar {
+        width: 80px;
+        height: 80px;
+    }
+
+    .medal {
+        font-size: 2rem;
+    }
+
+    .stats-container h2,
+    .performance-container h2,
+    .top-players-container h2 {
+        font-size: 1.2rem;
+    }
+
+    .stat-value {
+        font-size: 1.2rem;
+    }
+
+    .chart-container {
+        height: 200px;
+    }
+}
+
+/* Ajustes para dispositivos muito pequenos */
+@media screen and (max-width: 320px) {
+    .container {
+        padding: 0.5rem;
+    }
+
+    .podium-place {
+        width: 100%;
+        padding: 0.5rem;
+    }
+
+    .avatar {
+        width: 50px;
+        height: 50px;
+    }
+
+    .first .avatar {
+        width: 70px;
+        height: 70px;
+    }
+
+    .stat-label {
+        font-size: 0.9rem;
+    }
+
+    .stat-value {
+        font-size: 1rem;
+    }
+}
+
+/* Ajustes para orientação paisagem em dispositivos móveis */
+@media screen and (max-height: 500px) and (orientation: landscape) {
+    .podium-container {
+        min-height: auto;
+    }
+
+    .podium-places {
+        flex-direction: row;
+        padding: 1rem;
+    }
+
+    .podium-place {
+        width: auto;
+        height: auto !important;
+    }
+
+    .chart-container {
+        height: 150px;
+    }
+}
+
+/* Estilos do Menu Hambúrguer */
+.menu-hamburguer {
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 22px;
+    cursor: pointer;
+    z-index: 100;
+}
+
+.menu-hamburguer span {
+    display: block;
+    width: 100%;
+    height: 3px;
+    background: #00F7FF;
+    border-radius: 3px;
+    transition: all 0.3s ease;
+}
+
+/* Estado ativo do menu hambúrguer */
+.menu-hamburguer.ativo span:nth-child(1) {
+    transform: rotate(45deg) translate(6px, 6px);
+}
+
+.menu-hamburguer.ativo span:nth-child(2) {
+    opacity: 0;
+}
+
+.menu-hamburguer.ativo span:nth-child(3) {
+    transform: rotate(-45deg) translate(6px, -6px);
+}
+
+/* Ajuste do menu principal para mobile */
+@media screen and (max-width: 768px) {
+    .menu-hamburguer {
+        display: flex;
+    }
+
+    .menu-principal {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 70%;
+        height: 100vh;
+        background: rgba(10, 10, 31, 0.95);
+        flex-direction: column;
+        padding: 80px 2rem 2rem;
+        transition: right 0.3s ease;
+        z-index: 90;
+    }
+
+    .menu-principal.ativo {
+        right: 0;
+        box-shadow: -5px 0 15px rgba(0, 0, 0, 0.3);
+    }
+
+    .menu-principal .nav-link {
+        padding: 1rem 0;
+        font-size: 1.2rem;
+        border-bottom: 1px solid rgba(0, 247, 255, 0.1);
+    }
+
+    /* Ajuste do container para evitar scroll horizontal */
+    .container {
+        overflow-x: hidden;
+    }
+
+    /* Fundo escuro quando menu está ativo */
+    .menu-overlay {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.5);
+        z-index: 80;
+    }
+
+    .menu-overlay.ativo {
+        display: block;
+    }
+}
+
+/* Ajustes adicionais para dispositivos muito pequenos */
+@media screen and (max-width: 320px) {
+    .menu-principal {
+        width: 85%;
+    }
+
+    .menu-principal .nav-link {
+        font-size: 1.1rem;
+        padding: 0.8rem 0;
+    }
+} 

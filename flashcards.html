@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flashcards - Quiz de Trânsito</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="site-header">
+        <div class="main-header">
+            <div class="container">
+                <div class="header-content">
+                    <div class="logo">
+                        <img src="assets/images/logo.png" alt="Logo Quiz Trânsito">
+                        <h1 class="site-title">Quiz de Trânsito</h1>
+                    </div>
+                    <div class="menu-hamburguer">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                    <nav class="menu-principal">
+                        <a href="index.html" class="nav-link">Home</a>
+                        <a href="quiz.html" class="nav-link">Quiz</a>
+                        <a href="ranking.html" class="nav-link">Ranking</a>
+                        <a href="placas.html" class="nav-link">Placas</a>
+                        <a href="flashcards.html" class="nav-link">Flashcards</a>
+                        <a href="sobre.html" class="nav-link">Sobre Nós</a>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="container">
+        <div class="flashcards-container">
+            <h2>Flashcards de Estudo</h2>
+            <div class="flashcards-controls">
+                <select id="tema-filter" class="flashcard-filter">
+                    <option value="todos">Todos os Temas</option>
+                    <option value="Legislação de Trânsito">Legislação de Trânsito</option>
+                    <option value="Direção Defensiva">Direção Defensiva</option>
+                    <option value="Meio Ambiente">Meio Ambiente</option>
+                    <option value="Primeiros Socorros">Primeiros Socorros</option>
+                    <option value="Mecânica">Mecânica</option>
+                </select>
+                <div class="navigation-controls">
+                    <button id="prev-card" class="nav-button">❮ Anterior</button>
+                    <span id="card-counter">Card 1 de 120</span>
+                    <button id="next-card" class="nav-button">Próximo ❯</button>
+                </div>
+            </div>
+
+            <div class="flashcard">
+                <div class="flashcard-inner">
+                    <div class="flashcard-front">
+                        <div class="questao-texto"></div>
+                        <button class="btn-ver-resposta">Ver Resposta</button>
+                    </div>
+                    <div class="flashcard-back">
+                        <div class="resposta-texto">
+                            <p class="gabarito"></p>
+                            <p class="explicacao"></p>
+                        </div>
+                        <button class="btn-ver-resposta">Ver Pergunta</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Importante: Carregar o menu.js antes dos outros scripts -->
+    <script src="menu.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            let questoes = [];
+            let currentIndex = 0;
+            let filteredQuestions = [];
+
+            async function carregarQuestoes() {
+                try {
+                    const response = await fetch('transito.json');
+                    if (!response.ok) throw new Error('Erro ao carregar questões');
+                    questoes = await response.json();
+                    filteredQuestions = [...questoes];
+                    mostrarQuestao();
+                    atualizarContador();
+                } catch (error) {
+                    console.error('Erro:', error);
+                }
+            }
+
+            function mostrarQuestao() {
+                if (filteredQuestions.length === 0) return;
+                
+                // Resetar o card para a posição inicial (frente)
+                document.querySelector('.flashcard-inner').classList.remove('is-flipped');
+                
+                const questao = filteredQuestions[currentIndex];
+                
+                // Atualizar frente do card
+                document.querySelector('.questao-texto').textContent = questao.pergunta;
+                
+                // Atualizar verso do card
+                const respostaCorreta = questao.alternativas[questao.resposta_correta];
+                //document.querySelector('.gabarito').textContent = `${questao.resposta_correta.toUpperCase()}) ${respostaCorreta}`;
+                document.querySelector('.explicacao').textContent = questao.explicacao;
+            }
+
+            function atualizarContador() {
+                document.getElementById('card-counter').textContent = 
+                    `Card ${currentIndex + 1} de ${filteredQuestions.length}`;
+            }
+
+            function filtrarPorTema(tema) {
+                currentIndex = 0;
+                filteredQuestions = tema === 'todos' 
+                    ? [...questoes] 
+                    : questoes.filter(q => q.tema === tema);
+                
+                console.log(`Filtrando por tema: ${tema}`);
+                console.log(`Questões encontradas: ${filteredQuestions.length}`);
+                
+                // Resetar o card para a posição inicial (frente)
+                document.querySelector('.flashcard-inner').classList.remove('is-flipped');
+                
+                mostrarQuestao();
+                atualizarContador();
+            }
+
+            // Configurar eventos
+            const flashcard = document.querySelector('.flashcard');
+            flashcard.addEventListener('click', () => {
+                flashcard.querySelector('.flashcard-inner').classList.toggle('is-flipped');
+            });
+            
+            document.getElementById('prev-card').addEventListener('click', (e) => {
+                e.stopPropagation();
+                if (currentIndex > 0) {
+                    currentIndex--;
+                    mostrarQuestao();
+                    atualizarContador();
+                }
+            });
+            
+            document.getElementById('next-card').addEventListener('click', (e) => {
+                e.stopPropagation();
+                if (currentIndex < filteredQuestions.length - 1) {
+                    currentIndex++;
+                    mostrarQuestao();
+                    atualizarContador();
+                }
+            });
+            
+            document.getElementById('tema-filter').addEventListener('change', (e) => {
+                filtrarPorTema(e.target.value);
+            });
+
+            carregarQuestoes();
+        });
+    </script>
+</body>
+</html> 
